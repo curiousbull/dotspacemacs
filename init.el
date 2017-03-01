@@ -447,12 +447,14 @@ you should place your code here."
           '(
             ;; Create Todo under GTD.org -> Work -> Tasks
             ;; file+olp specifies to full path to fill the Template
-            ("w" "Work TODO" entry (file+olp "~/Dropbox/orgmode/GTD.org" "Work" "Tasks")
+            ("w" "Work TODO" entry (file+olp "~/workflow/main/gtd.org" "Work" "Tasks")
              "* TODO %? \n:PROPERTIES:\n:CREATED: %U\n:END:")
             ;; Create Todo under GTD.org -> Private -> Tasks
             ;; file+olp specifies to full path to fill the Template
-            ("p" "Private TODO" entry (file+olp "~/Dropbox/orgmode/GTD.org" "Private" "Tasks")
+            ("p" "Private TODO" entry (file+olp "~/workflow/main/gtd.org" "Private" "Tasks")
              "* TODO %? \n:PROPERTIES:\n:CREATED: %U\n:END:")
+            ("h" "Habit" entry (file "~/workflow/main/gtd.org")
+             "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n")
             ))
     (setq org-list-demote-modify-bullet (quote (("+" . "-")
                                                 ("*" . "-")
