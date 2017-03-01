@@ -487,6 +487,7 @@ you should place your code here."
                                 ("\\.x?html?\\'" . system)
                                 ("\\.pdf\\'" . system))))
 
+    (setq org-pomodoro-audio-player "mplayer.exe")
     )
     )
 
@@ -502,6 +503,8 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("c:/Users/curiousbull/workflow/main/gtd.org")))
+ '(org-pomodoro-audio-player nil)
  '(package-selected-packages
    (quote
     (youdao-dictionary names chinese-word-at-point xterm-color unfill smeargle shell-pop pangu-spacing pandoc-mode ox-pandoc ht orgit org-ref key-chord org-projectile org-present org-pomodoro alert log4e gntp org-download mwim multi-term mmm-mode markdown-toc magit-gitflow htmlize helm-make helm-bibtex parsebib gnuplot gmail-message-mode ham-mode markdown-mode html-to-markdown gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-ivy flyspell-correct flymd flycheck-pos-tip flycheck find-by-pinyin-dired evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help edit-server diff-hl company-statistics company-auctex company chinese-pyim chinese-pyim-basedict pos-tip biblio biblio-core auto-yasnippet yasnippet auto-dictionary auctex-latexmk auctex ace-pinyin pinyinlib ace-jump-mode ac-ispell auto-complete ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-purpose window-purpose imenu-list ivy-hydra info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm helm-core google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump popup f s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash async aggressive-indent adaptive-wrap ace-window ace-link avy))))
