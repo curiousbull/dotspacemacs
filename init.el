@@ -45,8 +45,11 @@ values."
               chinese-enable-youdao-dict t)
      markdown
      org
+     c-c++
      latex
      bibtex
+     python
+     ipython-notebook
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -59,7 +62,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(ob-ipython)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -325,7 +328,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-set-key (kbd "C-=") 'er/expand-region)
-  (with-eval-after-load 'org-agenda
+  ;;(with-eval-after-load 'org-agenda
     (setq org-agenda-span 'day)
 
     (setq org-agenda-files (quote ("~/workflow/main"
@@ -350,6 +353,20 @@ you should place your code here."
 
     (setq org-agenda-diary-file "~/workflow/main/diary.org")
 
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((perl . t)
+       (ruby . t)
+       (sh . t)
+       (dot . t)
+       (js . t)
+       (latex .t)
+       (python . t)
+       (ipython . t)
+       (emacs-lisp . t)
+       (plantuml . t)
+       (C . t)
+       (ditaa . t)))
 
     (require 'ox-publish)
     ;; Latex setting
@@ -480,7 +497,6 @@ you should place your code here."
     ;; Do not prompt to resume an active clock
     (setq org-clock-persist-query-resume nil)
 
-    (setq org-plantuml-jar-path "~/.spacemacs.d/plantuml.jar")
     (setq org-ditaa-jar-path "~/.spacemacs.d/ditaa.jar")
     (setq org-file-apps (quote ((auto-mode . emacs)
                                 ("\\.mm\\'" . system)
@@ -488,7 +504,7 @@ you should place your code here."
                                 ("\\.pdf\\'" . system))))
 
     (setq org-pomodoro-audio-player "mplayer.exe")
-    )
+    ;)
     )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -515,3 +531,17 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  )
 )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (ob-ipython dash-functional yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode ein websocket disaster cython-mode company-c-headers company-anaconda cmake-mode clang-format anaconda-mode pythonic evil-unimpaired youdao-dictionary names chinese-word-at-point xterm-color ws-butler window-numbering which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex smeargle shell-pop restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner pangu-spacing pandoc-mode ox-pandoc ht orgit org-ref key-chord org-projectile org-present org org-pomodoro alert log4e gntp org-plus-contrib org-download org-bullets open-junk-file neotree mwim multi-term move-text mmm-mode markdown-toc markdown-mode magit-gitflow macrostep lorem-ipsum linum-relative link-hint ivy-hydra info+ indent-guide ido-vertical-mode hydra hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-make helm-bibtex parsebib helm helm-core google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-ivy flyspell-correct flycheck-pos-tip flycheck flx-ido flx find-by-pinyin-dired fill-column-indicator fancy-battery eyebrowse expand-region spacemacs-theme quelpa exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump diminish diff-hl define-word counsel-projectile company-statistics company-auctex column-enforce-mode clean-aindent-mode chinese-pyim bind-key biblio auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent adaptive-wrap ace-window ace-pinyin ace-link ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
