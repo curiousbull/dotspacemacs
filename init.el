@@ -338,6 +338,13 @@ you should place your code here."
                         charset
                         (font-spec :family "Microsoft Yahei" :size 14))))
   (global-set-key (kbd "C-=") 'er/expand-region)
+
+  (defun remove-dos-eol ()
+    "Replace DOS eolns CR LF with Unix eolns CR"
+    (interactive)
+    (goto-char (point-min))
+    (while (search-forward "\r" nil t) (replace-match "")))
+
   ;;(with-eval-after-load 'org-agenda
     (setq org-agenda-span 'day)
 
